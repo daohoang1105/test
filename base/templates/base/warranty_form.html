@@ -1,0 +1,101 @@
+{% extends 'main.html' %}
+
+{% block content  %}
+
+  <main class="create-room layout">
+
+    <div class="container">
+      <div class="layout__box">
+        <div>&nbsp</div>
+        <div>&nbsp</div>
+        <div>&nbsp</div>
+        <div>&nbsp</div>
+        <div>&nbsp</div>
+        <div>&nbsp</div>
+        <div>&nbsp</div>
+        <div>&nbsp</div>
+        <div>&nbsp</div>
+        <div>&nbsp</div>
+        <div>&nbsp</div>
+        <div>&nbsp</div>
+        
+        <div class="layout__boxHeader">
+          <div class="layout__boxTitle">
+            <a href="{% url 'home' %}">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <title>arrow-left</title>
+                <path
+                  d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
+                </path>
+              </svg>
+            </a>
+            <h3>Create Warranty Form</h3>
+          </div>
+        </div>
+        <div class="layout__body">
+          <form class="form" method="POST" action="">
+            {% csrf_token %}
+
+            
+
+            <div class="form__group">
+              <label for="product_serial_number">Product Serial Number</label>
+              {{form.product_serial_number}}
+            </div>
+
+            <div class="form__group">
+              <label for="product_model">Product Model</label>
+              {{form.product_model}}
+            </div>
+
+            <div class="form__group">
+              <label for="date_of_installation">Date of installation</label>
+              {{form.date_of_installation}}
+            </div>
+
+            <div class="form__group">
+              <label for="company">Company</label>
+              {{form.company}}
+            </div>
+
+            <div class="form__group">
+              <label for="contact_person">Contact Person</label>
+              {{form.contact_person}}
+            </div>
+            
+            <div class="form__group">
+              <label for="contact_number">Contact Number</label>
+              {{form.contact_number}}
+            </div>
+
+            <div class="form__group">
+              <label for="email">Email</label>
+              {{form.email}}
+            </div>
+
+            <div class="form__group">
+              <label for="other_recipients">Other Recipients</label>
+              {{form.other_recipients}}
+            </div>
+
+            <div class="form__group">
+              <label for="site_address">Site Address</label>
+              {{form.site_address}}
+            </div>
+
+            <div class="form__group">
+              <label for="shipping_address">Shipping Address</label>
+              {{form.shipping_address}}
+            </div>
+
+
+            <div class="form__action">
+              <a class="btn btn--dark" href="{% url 'home' %}">Cancel</a>
+              <button class="btn btn--main" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  {% endblock content %}
